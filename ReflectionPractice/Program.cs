@@ -16,13 +16,12 @@ namespace ReflectionPractice
 
             Type type = typeof(String);
 
-            MethodInfo substr = type.GetMethod("Substring",
+            MethodInfo substring = type.GetMethod("Substring",
                 new Type[] { typeof(int), typeof(int) });
 
-            Object result = substr.Invoke(str, new Object[] { 0, 40 });
-            Console.WriteLine("{0}\n\"{1}\".", substr, result);
-
-
+            Object result = substring.Invoke(str, new Object[] { 0, 40 });
+            Console.WriteLine("{0}\n\"{1}\".\n\n", substring, result);
+            
             Type myType = typeof(List<int>);
 
             foreach(var info in myType.GetConstructors())
@@ -32,4 +31,3 @@ namespace ReflectionPractice
         }
     }
 }
-/*2.	Получить список конструкторов класса List<T>*/
